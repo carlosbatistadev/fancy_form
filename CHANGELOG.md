@@ -1,3 +1,6 @@
+## 1.0.0+4
+- Added: FancyFromField documentation.
+
 ## 1.0.0+3
 - Fixed CHANGELOG.
 
