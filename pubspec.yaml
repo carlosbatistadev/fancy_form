@@ -1,0 +1,25 @@
+name: fancy_form
+description: A flexible and easy-to-use form management solution for Flutter.
+version: 1.0.0
+repository: https://github.com/MusilyApp/dart_ytmusic_api.git
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  mask_text_input_formatter: ^2.9.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+flutter:
+
+  uses-material-design: true
+  
