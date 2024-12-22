@@ -1,7 +1,5 @@
 import 'package:example/great_form.dart';
 import 'package:fancy_form/fancy_form.dart';
-import 'package:fancy_form/fancy_form_field.dart';
-import 'package:fancy_form/fancy_input.dart';
 import 'package:flutter/material.dart';
 
 void main() {

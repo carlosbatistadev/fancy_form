@@ -1,6 +1,4 @@
-import 'package:fancy_form/fancy_input.dart';
-import 'package:fancy_form/fancy_manager.dart';
-import 'package:fancy_form/fancy_validator.dart';
+import 'package:fancy_form/fancy_form.dart';
 import 'package:flutter/services.dart';
 
 class GreatForm extends FancyManager {
