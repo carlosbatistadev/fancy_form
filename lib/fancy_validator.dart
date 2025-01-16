@@ -83,7 +83,9 @@ class FancyValidator {
     return () {
       String cpf = value.replaceAll(RegExp(r'\D'), '');
 
-      if (cpf.length != 11 || RegExp(r'^\d{11}$').hasMatch(cpf)) {
+      if (cpf.length != 11 ||
+          !RegExp(r'^\d{11}$').hasMatch(cpf) ||
+          RegExp(r'^(\d)\1*$').hasMatch(cpf)) {
         return errorMessage ?? 'Please enter a valid CPF.';
       }
 
