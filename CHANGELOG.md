@@ -1,3 +1,6 @@
+## 1.0.1
+- Fixed: CPF Validator
+
 ## 1.0.0+5
 - Fixed: Git repository.
 
