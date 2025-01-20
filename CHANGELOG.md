@@ -1,3 +1,6 @@
+## 1.2.0
+- Feature: clear only method with clearOnly(List<String> ids)
+
 ## 1.1.0
 - Feature: Clean all methods with cleanAll()
 

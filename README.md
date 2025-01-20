@@ -16,7 +16,7 @@ Add the package to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  fancy_form: ^1.1.0
+  fancy_form: ^1.2.0
 ```
 
 Run `flutter pub get` to install.
