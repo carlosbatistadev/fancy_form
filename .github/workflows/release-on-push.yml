@@ -39,7 +39,7 @@ jobs:
           TAG="v${{ steps.get_version.outputs.version }}"
           git tag $TAG
           git push origin $TAG
-          gh release create $TAG --title "Release $TAG" --notes "New release version $TAG"
+          gh release create $TAG --title "$TAG""
       
       - name: Tag already exists - Exit successfully
         if: steps.check_tag.outputs.exists == 'true'
