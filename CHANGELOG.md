@@ -1,3 +1,6 @@
+## 1.1.0
+- Feature: Clean all methods with cleanAll()
+
 ## 1.0.1
 - Fixed: CPF Validator
 

@@ -1,6 +1,6 @@
 name: fancy_form
 description: A flexible and easy-to-use form management solution for Flutter.
-version: 1.0.1
+version: 1.1.0
 repository: https://github.com/MusilyApp/fancy_form
 
 environment:
