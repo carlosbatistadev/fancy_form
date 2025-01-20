@@ -76,8 +76,26 @@ abstract class FancyManager {
   /// the form inputs to an empty state.
   ///
   /// Use this method when you need to reset the form without disposing of the controllers.
-  void cleanAll() {
+  void clearAll() {
     for (final input in inputs) {
+      input.controller.clear();
+    }
+  }
+
+  /// Clears the text of specific input fields identified by their [ids].
+  ///
+  /// This method iterates through the provided list of input field [ids] and
+  /// clears their associated [TextEditingController], resetting only the specified inputs.
+  ///
+  /// Throws an exception if any of the provided [ids] do not correspond to an existing input.
+  ///
+  /// [ids]: A list of unique identifiers for the input fields to be cleared.
+  void clearOnly(List<String> ids) {
+    for (final id in ids) {
+      final input = inputs.where((e) => e.id == id).firstOrNull;
+      if (input == null) {
+        throw Exception('[FormManager] Invalid form input id ($id)');
+      }
       input.controller.clear();
     }
   }
