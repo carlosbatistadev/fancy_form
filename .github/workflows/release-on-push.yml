@@ -40,14 +40,9 @@ jobs:
           git tag $TAG
           git push origin $TAG
           gh release create $TAG --title "$TAG"
-      
-      - name: Tag already exists - Exit successfully
-        if: steps.check_tag.outputs.exists == 'true'
-        run: echo "Release already exists, exiting successfully."
 
   publish:
     needs: create-release 
-    if: needs.create-release.outputs.exisits == 'false'
     permissions:
       id-token: write
     uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
