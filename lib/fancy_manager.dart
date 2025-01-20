@@ -69,6 +69,19 @@ abstract class FancyManager {
     return input;
   }
 
+  /// Clears the text of all input fields in the form.
+  ///
+  /// This method iterates through all registered [FancyInput] instances and
+  /// clears their associated [TextEditingController], effectively resetting
+  /// the form inputs to an empty state.
+  ///
+  /// Use this method when you need to reset the form without disposing of the controllers.
+  void cleanAll() {
+    for (final input in inputs) {
+      input.controller.clear();
+    }
+  }
+
   /// Disposes of all input controllers, releasing their resources.
   void dispose() {
     for (final input in inputs) {
