@@ -110,7 +110,7 @@ class _SimpleFormScreenState extends State<SimpleFormScreen> {
                 ),
               ),
               SizedBox(
-                height: 12,
+                height: 8,
               ),
               FilledButton(
                 onPressed: () {
