@@ -99,6 +99,16 @@ class _SimpleFormScreenState extends State<SimpleFormScreen> {
                 ),
                 maxLines: 4,
               ),
+              FancyFormField(
+                fancyKey: FancyKey(
+                  id: 'cpf',
+                  formManager: greatForm,
+                ),
+                decoration: InputDecoration(
+                  labelText: 'CPF',
+                  hintText: 'Enter your CPF.',
+                ),
+              ),
               SizedBox(
                 height: 12,
               ),

@@ -38,6 +38,14 @@ class GreatForm extends FancyManager {
       ],
     ),
     FancyInput(
+      id: 'cpf',
+      mask: '###.###.###-##',
+      rules: (value) => [
+        FancyValidator.notEmpty(value),
+        FancyValidator.validCPF(value),
+      ],
+    ),
+    FancyInput(
       id: 'notes',
       rules: (value) => [],
     ),
