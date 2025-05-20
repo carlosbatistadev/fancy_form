@@ -155,4 +155,20 @@ class FancyValidator {
       return null;
     };
   }
+
+  /// Returns a validation function that applies a custom validation rule.
+  ///
+  /// The validation function will apply the provided custom validation function to the input value.
+  ///
+  /// [value]: The input value to validate.
+  /// [validator]: The custom validation function that defines the validation logic.
+  /// Returns null if valid, or an error message string if invalid.
+  static String? Function() validField(
+    String value,
+    String? Function(String) validator,
+  ) {
+    return () {
+      return validator(value);
+    };
+  }
 }
