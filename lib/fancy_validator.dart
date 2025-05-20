@@ -110,4 +110,49 @@ class FancyValidator {
       return null;
     };
   }
+
+  /// Returns a validation function that checks if the input value is a valid CNPJ (Brazilian company taxpayer registry).
+  ///
+  /// The validation function will return an error message if the value does not meet the CNPJ format or fails the CNPJ check,
+  /// otherwise it returns `null` indicating the value is valid.
+  ///
+  /// [value]: The input value to validate.
+  /// [errorMessage]: The error message to display if the validation fails. If not provided, a default message is used.
+  static String? Function() validCNPJ(
+    String value, {
+    String? errorMessage,
+  }) {
+    return () {
+      String cnpj = value.replaceAll(RegExp(r'\D'), '');
+
+      if (cnpj.length != 14 ||
+          !RegExp(r'^\d{14}$').hasMatch(cnpj) ||
+          RegExp(r'^(\d)\1*$').hasMatch(cnpj)) {
+        return errorMessage ?? 'Please enter a valid CNPJ.';
+      }
+
+      List<int> weights1 = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
+      List<int> weights2 = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
+
+      int sum1 = 0;
+      for (int i = 0; i < 12; i++) {
+        sum1 += int.parse(cnpj[i]) * weights1[i];
+      }
+      int digit1 = (sum1 * 10) % 11;
+      if (digit1 == 10) digit1 = 0;
+
+      int sum2 = 0;
+      for (int i = 0; i < 13; i++) {
+        sum2 += int.parse(cnpj[i]) * weights2[i];
+      }
+      int digit2 = (sum2 * 10) % 11;
+      if (digit2 == 10) digit2 = 0;
+
+      if (digit1 != int.parse(cnpj[12]) || digit2 != int.parse(cnpj[13])) {
+        return errorMessage ?? 'Please enter a valid CNPJ.';
+      }
+
+      return null;
+    };
+  }
 }
